@@ -1,37 +1,55 @@
-## Welcome to GitHub Pages
+# CASI Website
 
-You can use the [editor on GitHub](https://github.com/CA-SI/ca-si.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is first build of casi website
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Getting Started
 
-### Markdown
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Installing
 
-```markdown
-Syntax highlighted code block
+A step by step series of examples that tell you have to get a development env running
 
-# Header 1
-## Header 2
-### Header 3
+Say what the step will be
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+npm install
+npm start
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+And repeat
 
-### Jekyll Themes
+```
+bunble exec jekyll serve
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CA-SI/ca-si.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Deployment
 
-### Support or Contact
+Just run on Jekyll
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Built With
+
+* [Jekyll](https://jekyllrb.com/) - SSG Framework
+* [NPM/Yarn] - Dependency Management
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ca-si.github.io/tags). 
+
+## Authors
+
+* **MatheusRV** - *Initial work* - [MatheusRV](https://github.com/MatheusRV)
+
+See also the list of [contributors](https://github.com/ca-si.github.io/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the GNU GPLv3 - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Special thank you to GitHub Campus Expert Team, that inspires me to create this page.
