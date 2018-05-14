@@ -1,0 +1,11 @@
+---
+---
+[{% for subject in site.subjects %}
+  {
+    "title": {{ subject.title | jsonify }},
+    "period": {{ subject.period | jsonify }}{% if subject.notes != "" %},
+    "notes": {{ subject.notes | jsonify }}{% endif %}{% if subject.notes != "" %},
+    "category": {{ subject.category | jsonify }}{% endif %},
+    "url": "{{ site.baseurl }}{{ subject.url }}"
+  }{% unless forloop.last %},{% endunless %}{% endfor %}
+]

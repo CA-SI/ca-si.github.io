@@ -1,1 +1,88 @@
-theme: jekyll-theme-minimal
+title: CASI
+greeting: Welcome to JKAN
+description: Centro Acadêmico de Sistemas de Informação
+baseurl: /jkan
+logo: /img/jkan.png
+
+# Site theme
+jkan_theme: Default
+
+# Authentication
+github_client_id:
+gatekeeper_host:
+
+# Subject schema
+schema: default
+
+# Nav bar
+navigation:
+  - title: Subjects
+    url: /subjects/
+  - title: Periods
+    url: /periods/
+
+# Collections
+collections:
+  subjects:
+    output: true
+    permalink: /subjects/:path/
+  periods:
+    output: true
+    permalink: /periods/:path/
+
+# Collections (cont'd)
+defaults:
+  - scope:
+      path: ""
+      type: subjects
+    values:
+      layout: subject
+      category: Uncategorized
+      period: N/A
+  - scope:
+      path: ""
+      type: periods
+    values:
+      layout: period
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Google Analytics
+google_analytics:
+  enabled: false
+  code: "UA-XXXXXX-1"
+
+# US Digital Analytics Program - https://analytics.usa.gov
+digital_analytics_program:
+  enabled: false
+  agency: ""
+  subagency: ""
+
+# Hypothesis.io - Annotator
+hypothesis:
+  enabled: false
+
+# Twitter
+twittercard:
+  enabled: false
+  username: "@"
+
+# Open Graph
+opengraph:
+  enabled: true
+
+# Exclude these files from the build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .travis.yml
+  - node_modules
+  - scripts/src
+  - package.json
+  - webpack.config.js
+  - README.md
+  - LICENSE

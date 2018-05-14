@@ -1,0 +1,37 @@
+---
+layout: default
+---
+{% include breadcrumbs.html parent="Periods" %}
+
+<div data-component="view-switcher">
+  <div class="row" data-hook="view" data-view="display">
+    {% if page.logo and page.logo != empty %}
+    <div class="col-sm-3">
+      <a href="{{ page.logo }}" class="thumbnail"><img src="{{ page.logo }}" alt="{{ page.title }} logo"></a>
+    </div>
+    <div class="col-sm-9">
+    {% else %}
+    <div class="col-sm-12">
+    {% endif %}
+      <h1>
+        {{ page.title }}
+        <a href="?view=edit" class="pull-right btn btn-default admin-only">Edit</a>
+      </h1>
+      <p>{{ page.description }}</p>
+      <div data-component="subjects-list" data-period="{{ page.title | slugify }}">
+        <h3 class="subjects-count" data-hook="subjects-count"></h3>
+        <input type="text" data-hook="search-query" placeholder="Search..." class="form-control">
+        <div data-hook="subjects-items"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" data-hook="view" data-view="edit">
+    <div class="col-sm-8 col-sm-offset-2">
+      {% include period-form.html period=page %}
+    </div>
+    <div class="col-sm-2">
+      <a href="{{ site.baseurl }}{{ page.url }}" class="btn btn-default pull-right">Cancel</a>
+    </div>
+  </div>
+</div>

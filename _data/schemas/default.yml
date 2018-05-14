@@ -1,0 +1,81 @@
+# To add fields, make a new schema file in this directory
+# and change the schema setting in _config.yml to its name
+subject_fields:
+  - field_name: title
+    label: Nome da Disciplina
+    datajson: title
+  - field_name: code
+    label: Código da Disciplina
+    datajson: publisher.name
+  - field_name: notes
+    label: Ementa
+    form_template: form/textarea.html
+    datajson: description
+  - field_name: category
+    label: Category
+    form_template: form/category.html
+    display_template: display/category.html
+
+resource_fields:
+  - field_name: name
+    label: Nome do Material Complementar
+    datajson: distribution.title
+  - field_name: code
+    label: Código da Disciplina
+  - field_name: format
+    label: Formato
+    datajson: distribution.format
+    form_template: form/dropdown.html
+    values:
+      - Documento
+      - Slides
+      - Exercícios
+      - Imagem
+      - Tabela
+      - Infografico
+      - Dataset
+
+
+period_fields:
+  - field_name: title
+    label: Title
+  - field_name: description
+    label: Description
+  - field_name: logo
+    label: Logo
+
+
+associated_field:
+  - field_name: name
+    label: Nome do Associado
+  - field_name: enrollment
+    label: Número de Matrícula (com ER/EF/EV)
+  - field_name: facebook
+    label: Link do Facebook
+
+
+challenges_field:
+  - field_name: name
+    label: Nome do Desafio
+  - field_name: sponsor
+    label: Patrcínador
+  - field_name: awards
+    label: Premiação
+  - field_name: difficulty
+    label: Dificuldade
+  - field_name: description
+    label: Descrição
+  - field_name: url
+    label: URL
+
+
+category_fields:
+  - field_name: name
+    label: Nome da Categoria
+  - field_name: logo
+    label: Logo
+  - field_name: logo_credit
+    label: Logo Credit
+  - field_name: featured
+    label: Destaque na Home
+    form_template: form/checkbox.html

@@ -1,0 +1,23 @@
+---
+title: Subjects
+layout: default
+permalink: /subjects/
+---
+{% include breadcrumbs.html %}
+
+<div class="row">
+  <div class="col-sm-4">
+
+    <h3>Categories</h3>
+    <div class="list-group" data-component="categories-filter" data-show="5"></div>
+
+    <h3>Periods</h3>
+    <div class="list-group" data-component="periods-filter" data-show="15"></div>
+  </div>
+  <div class="col-sm-8" data-component="subjects-list">
+    <h3 class="subjects-count" data-hook="subjects-count"></h3>
+    <a href="{{ site.baseurl }}/add-subject/" class="btn btn-default pull-right admin-only" data-hook="add-subject-btn"><i class="fa fa-plus"></i> Add Subject</a>
+    <input type="text" data-hook="search-query" placeholder="Search..." class="form-control">
+    <div data-hook="subjects-items"></div>
+  </div>
+</div>

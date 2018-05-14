@@ -1,0 +1,26 @@
+---
+title: Periods
+layout: default
+permalink: /periods/
+---
+{% include breadcrumbs.html %}
+
+<a href="{{ site.baseurl }}/add-period/" class="btn btn-default pull-right admin-only" data-hook="add-period-btn"><i class="fa fa-plus"></i> Add Period</a>
+
+{% for period in site.periods %}
+  {% assign subject_count = site.subjects | where:"period", period.title | size %}
+  <div class="media">
+    <div class="media-left">
+      {% if period.logo and period.logo != empty %}
+        <a href="{{ site.baseurl }}{{ period.url }}" class="period-thumbnail">
+          <img class="media-object" src="{{ period.logo }}" alt="{{ period.title }}">
+        </a>
+      {% endif %}
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><a href="{{ site.baseurl }}{{ period.url }}">{{ period.title }}</a></h4>
+      <p>{{ period.description }}</p>
+      <p><a href="{{ site.baseurl }}/subjects/?period={{ period.title | slugify }}">{{ subject_count }} subjects</a></p>
+    </div>
+  </div>
+{% endfor %}

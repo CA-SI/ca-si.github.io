@@ -1,0 +1,6 @@
+{% for subject in include.subjects %}
+<subject>
+  <h3><a href="{{ site.baseurl }}{{ subject.url }}">{{ subject.title }}</a></h3>
+  {{ subject.notes | truncate: 300, '...' }}
+</subject>
+{% endfor %}

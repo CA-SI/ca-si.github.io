@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label for="{{ include.field_name }}">{{ include.field.label }}</label>
+  <div class="input-group">
+    <select class="form-control" id="{{ include.field_name }}" name="{{ include.field_name }}">
+      <option value="">{{ include.field.placeholder | default: "Select..." }}</option>
+      {% for period in site.periods %}
+        <option{% if include.value == period.title %} selected="selected"{% endif %}>{{ period.title }}</option>
+      {% endfor %}
+    </select>
+    <span class="input-group-btn">
+      <a href="{{ site.baseurl }}/add-period/" class="btn btn-default"><i class="fa fa-plus"></i></a>
+    </span>
+  </div>
+</div>

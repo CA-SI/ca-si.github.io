@@ -1,0 +1,29 @@
+{% assign schema = page.schema | default: site.schema %}
+{% assign period_fields = site.data.schemas[schema].period_fields %}
+{% assign period_system_fields = "title|description|logo" | split: "|" %}
+{% assign periods = site.collections | where: "label", "periods" | first %}
+<form data-component="form"
+  data-file-dir="{{ periods.relative_directory }}"
+  data-render-dir="periods"
+  {% if include.period %}
+    data-file-path="{{ include.period.path }}"
+    data-render-path="{{ include.period.url }}"
+  {% endif %}>
+  <input type="hidden" id="schema" name="schema" value="{{ schema }}">
+
+  <fieldset>
+    {% for field in period_fields %}
+      {% assign template = field.form_template | default: "form/text.html" %}
+      {% assign field_name = field.field_name %}
+      {% assign value = include.period[field_name] %}
+      {% include {{ template }} field=field field_name=field_name value=value %}
+    {% endfor %}
+  </fieldset>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  {% if include.period %}
+    <button class="btn btn-danger" data-component="delete-page-button" data-file-path="{{ include.period.path }}">
+      <i class="fa fa-trash"></i> Delete period
+    </button>
+  {% endif %}
+</form>
